@@ -20,6 +20,8 @@ func rootHandler(response http.ResponseWriter, request *http.Request) {
     flag.Parse()
 
     switch *lang {
+      case "de":
+        fmt.Fprintf(response, "Hallo %s!. Willkommen!\n", request.URL.Path[1:])
       case "en":
         fmt.Fprintf(response, "Hello %s!. Welcome!\n", request.URL.Path[1:])
       case "es":
